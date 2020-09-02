@@ -34,10 +34,16 @@ export default {
     modes: {
       dark: {
         text: "#fff",
-        background: "#000",
+        background: "#311",
         lite: "#333",
         gray: "#666",
       },
+      // default: {
+      //   text: "#333",
+      //   background: "#f00",
+      //   lite: "#333",
+      //   gray: "#666",
+      // },
     },
   },
   space: [0, 4, 8, 16, 32, 64, 128],

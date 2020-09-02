@@ -185,7 +185,7 @@ const Style = (props) => (
     h5,
     h6 {
       text-rendering: optimizelegibility;
-      margin: 0 0 16px;
+      margin: 16px 0 8px;
       font-family: ${theme.fonts.heading};
     }
     input,

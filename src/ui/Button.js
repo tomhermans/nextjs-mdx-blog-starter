@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-export default (props) => (
+const Button = (props) => (
   <button
     disabled={props.disabled}
     sx={{
@@ -18,3 +18,5 @@ export default (props) => (
     {...props}
   />
 )
+
+export default Button

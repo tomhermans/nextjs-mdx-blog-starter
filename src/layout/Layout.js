@@ -15,16 +15,13 @@ if (theme.colors.modes && theme.colors.modes.length !== 0) {
   codeToRunOnClient = `
   (function() {
     const theme = ${JSON.stringify(theme)}
-
     let mode = localStorage.getItem("theme-ui-color-mode")
-
     if (!mode) {
       const mql = window.matchMedia('(prefers-color-scheme: dark)')
       if (typeof mql.matches === 'boolean' && mql.matches) {
         mode = "dark"
       }
     }
-
     if (mode && typeof theme.colors.modes === "object") {
       const root = document.documentElement
       Object.keys(theme.colors.modes[mode]).forEach((colorName) => {
@@ -43,10 +40,9 @@ const Layout = (props) => {
   return (
     <>
       <Head {...props} />
-      {
-        codeToRunOnClient && 
+      {codeToRunOnClient && (
         <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
-      }
+      )}
       <Box
         sx={{
           display: "flex",
@@ -54,10 +50,7 @@ const Layout = (props) => {
           flexDirection: "column",
         }}
       >
-        {
-          typeof theme.colors.modes === "object" && 
-          <ThemeToggle />
-        }
+        {typeof theme.colors.modes === "object" && <ThemeToggle />}
         <Header />
         <Main>{props.children}</Main>
         <Footer />

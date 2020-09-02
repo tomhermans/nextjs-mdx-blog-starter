@@ -4,6 +4,9 @@ import Theme from "./Theme"
 import config from "../../blog.config"
 import ReactGA from "react-ga"
 
+import React from "react"
+import { MDXEmbedProvider } from "mdx-embed"
+
 const Wrapper = (props) => {
   if (typeof config.analytics === "string" && config.analytics !== "") {
     ReactGA.initialize(config.analytics)
@@ -15,7 +18,9 @@ const Wrapper = (props) => {
 
   return (
     <ThemeProvider theme={Theme}>
-      <Layout {...props} />
+      <MDXEmbedProvider>
+        <Layout {...props} />
+      </MDXEmbedProvider>
     </ThemeProvider>
   )
 }

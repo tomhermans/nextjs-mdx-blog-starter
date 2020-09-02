@@ -17,6 +17,7 @@
     "@next/mdx": "^9.5.1",
     "disqus-react": "^1.0.9",
     "gray-matter": "^4.0.2",
+    "mdx-embed": "^0.0.9",
     "next": "^9.5.1",
     "prism-react-renderer": "^1.1.1",
     "prop-types": "^15.7.2",
@@ -29,6 +30,5 @@
     "onchange": "^7.0.2",
     "prettier": "^2.0.5"
   },
-  "repository": "https://github.com/johnpolacek/nextjs-mdx-blog-starter",
   "license": "MIT"
 }
