@@ -9,6 +9,9 @@ import Header from "../ui/Header"
 import Main from "../ui/Main"
 import Footer from "../ui/Footer"
 
+import { useRouter } from "next/router"
+import Transition from "../components/Transition"
+
 // inject inline styles on the body before the page is rendered to avoid the flash of light if we are in dark mode
 let codeToRunOnClient = false
 if (theme.colors.modes && theme.colors.modes.length !== 0) {
@@ -36,6 +39,7 @@ if (theme.colors.modes && theme.colors.modes.length !== 0) {
 }
 
 const Layout = (props) => {
+  const router = useRouter()
   useEffect(() => {
     // the theme styles will be applied by theme ui after hydration, so remove the inline style we injected on page load
     document.body.removeAttribute("style")
@@ -56,7 +60,9 @@ const Layout = (props) => {
       >
         {typeof theme.colors.modes === "object" && <ThemeToggle />}
         <Header />
-        <Main>{props.children}</Main>
+        <Transition location={router.pathname}>
+          <Main>{props.children}</Main>
+        </Transition>
         <Footer />
       </Box>
 

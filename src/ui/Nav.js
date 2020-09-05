@@ -18,6 +18,12 @@ const Nav = (props) => {
       <NavLink href="/about" active={router.pathname === "/about"}>
         About / MDXEmbed
       </NavLink>
+      <NavLink href="/page2" active={router.pathname === "/page2"}>
+        Page2
+      </NavLink>
+      <NavLink href="/page3" active={router.pathname === "/page3"}>
+        P3
+      </NavLink>
     </Box>
   )
 }
