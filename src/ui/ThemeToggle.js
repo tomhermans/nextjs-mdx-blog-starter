@@ -28,7 +28,7 @@ const ThemeToggle = (props) => {
           setColorMode(colorMode === "default" ? "dark" : "default")
         }}
       >
-        switch to {colorMode === "default" ? "dark" : "light"} mode
+        {colorMode === "default" ? "🌚" : "🌝"} mode
       </Button>
     </Box>
   )

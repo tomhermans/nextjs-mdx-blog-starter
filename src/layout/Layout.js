@@ -22,6 +22,10 @@ if (theme.colors.modes && theme.colors.modes.length !== 0) {
         mode = "dark"
       }
     }
+    
+    console.log(mode);
+    console.log(theme.colors.modes);
+
     if (mode && typeof theme.colors.modes === "object") {
       const root = document.documentElement
       Object.keys(theme.colors.modes[mode]).forEach((colorName) => {

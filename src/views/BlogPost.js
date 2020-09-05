@@ -6,6 +6,8 @@ import Link from "next/link"
 import Container from "../ui/Container"
 import CodeBlock from "../ui/CodeBlock"
 import DraftBadge from "../ui/DraftBadge"
+import SVGImg from "../components/svg"
+import Welcome from "../components/welcome"
 
 const BlogPost = ({ post }) => {
   const isLocal = process.env.NODE_ENV === "development"
@@ -33,13 +35,28 @@ const BlogPost = ({ post }) => {
               )}
               {post.title}
             </Heading>
+
             {config.showDate && (
               <Text sx={{ fontStyle: "italic" }}>
-                Originally published on{" "}
-                {new Date(post.date).toLocaleDateString()}
+                Originally published on {post.date}
               </Text>
             )}
           </Box>
+          <Welcome name="gg" />
+
+          <SVGImg title="Tom" id="svg1" posX="0" posY="40" fill="orange">
+            SVG 01
+          </SVGImg>
+          <SVGImg title="Tom" id="svg2" posX="0" posY="40" fill="red">
+            SVG 02
+          </SVGImg>
+          <SVGImg title="Tom" id="svg3" posX="0" posY="40" fill="green">
+            SVG 03
+          </SVGImg>
+          <SVGImg title="Tom" id="svg4" posX="0" posY="40" fill="blue">
+            SVG TEst
+          </SVGImg>
+
           {post.coverImage && (
             <Image
               sx={{
